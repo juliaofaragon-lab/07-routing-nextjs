@@ -11,7 +11,7 @@ const noteHubApi = axios.create({
 function getAuthorizationHeader() {
   if (!noteHubToken) {
     throw new Error(
-      'NEXT_PUBLIC_NOTEHUB_TOKEN is missing. Add it to .env.local and Vercel Environment Variables.',
+      'NEXT_PUBLIC_NOTEHUB_TOKEN is missing. Add it to the environment variables and redeploy the application.',
     );
   }
 

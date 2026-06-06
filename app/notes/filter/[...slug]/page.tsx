@@ -47,9 +47,9 @@ export default async function FilteredNotesPage({
     return (
       <main>
         <p>
-          NoteHub API token is not configured. Add{' '}
-          <code>NEXT_PUBLIC_NOTEHUB_TOKEN</code> to <code>.env.local</code> and
-          restart the server.
+          NoteHub API token is not configured. Add the{' '}
+          <code>NEXT_PUBLIC_NOTEHUB_TOKEN</code> environment variable and
+          redeploy the application.
         </p>
       </main>
     );
