@@ -43,6 +43,18 @@ export default async function FilteredNotesPage({
     notFound();
   }
 
+  if (!process.env.NEXT_PUBLIC_NOTEHUB_TOKEN) {
+    return (
+      <main>
+        <p>
+          NoteHub API token is not configured. Add{' '}
+          <code>NEXT_PUBLIC_NOTEHUB_TOKEN</code> to <code>.env.local</code> and
+          restart the server.
+        </p>
+      </main>
+    );
+  }
+
   const queryClient = new QueryClient();
   const initialQuery = {
     queryKey: ['notes', 1, '', tag] as const,
