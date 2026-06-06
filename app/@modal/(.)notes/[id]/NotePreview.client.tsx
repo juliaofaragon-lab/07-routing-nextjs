@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 
 import Modal from '@/components/Modal/Modal';
-import { fetchNoteById } from '@/lib/api/notes';
+import { fetchNoteById } from '@/lib/api';
 
 import css from './NotePreview.module.css';
 
