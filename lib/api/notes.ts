@@ -2,11 +2,21 @@ import axios from 'axios';
 
 import type { CreateNoteData, Note, NoteTag } from '@/types/note';
 
+const noteHubToken = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
+
 const noteHubApi = axios.create({
   baseURL: 'https://notehub-public.goit.study/api',
-  headers: {
-    Authorization: `Bearer ${process.env.NEXT_PUBLIC_NOTEHUB_TOKEN ?? ''}`,
-  },
+});
+
+noteHubApi.interceptors.request.use((config) => {
+  if (!noteHubToken) {
+    throw new Error(
+      'NEXT_PUBLIC_NOTEHUB_TOKEN is missing. Add it to .env.local and Vercel Environment Variables.',
+    );
+  }
+
+  config.headers.Authorization = `Bearer ${noteHubToken}`;
+  return config;
 });
 
 export interface FetchNotesParams {

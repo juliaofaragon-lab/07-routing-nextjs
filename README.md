@@ -13,7 +13,9 @@ catch-all routes, intercepted note previews, and a custom not-found page.
    NEXT_PUBLIC_NOTEHUB_TOKEN=your_notehub_token
    ```
 
-3. Start the development server with `npm run dev`.
+3. Add the same variable in Vercel project settings for Production, Preview,
+   and Development environments.
+4. Start the development server with `npm run dev`.
 
 ## Routes
 
